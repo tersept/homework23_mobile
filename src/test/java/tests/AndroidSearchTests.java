@@ -14,7 +14,7 @@ public class AndroidSearchTests {
     void searchTest() {
         $(AppiumBy.accessibilityId("Search Wikipedia")).click();
         $(AppiumBy.id("org.wikipedia.alpha:id/search_src_text")).sendKeys("BrowserStack");
-        $$(AppiumBy.className("android.widget.TextView")).shouldHave(sizeGreaterThan(0));
+        $$(AppiumBy.id("org.wikipedia.alpha:id/page_list_item_title")).shouldHave(sizeGreaterThan(0));
     }
 
 }
