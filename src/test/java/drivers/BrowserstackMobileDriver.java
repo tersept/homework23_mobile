@@ -1,5 +1,6 @@
 package drivers;
 
+import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.WebDriverProvider;
 import org.aeonbits.owner.ConfigFactory;
 import org.openqa.selenium.Capabilities;
@@ -13,7 +14,6 @@ import java.net.URL;
 public class BrowserstackMobileDriver implements WebDriverProvider {
 
     public static Config browserstack = ConfigFactory.create(Config.class, System.getProperties());
-
     public static URL getBrowserstackUrl() {
         try {
             return new URL("http://hub.browserstack.com/wd/hub");
@@ -27,7 +27,6 @@ public class BrowserstackMobileDriver implements WebDriverProvider {
         MutableCapabilities mutableCapabilities = new MutableCapabilities();
         mutableCapabilities.merge(capabilities);
 
-        mutableCapabilities.setCapability("browserstack.appium_version", "1.22.0");
         mutableCapabilities.setCapability("browserstack.user", browserstack.getBrowserstackUser());
         mutableCapabilities.setCapability("browserstack.key", browserstack.getBrowserstackKey());
         mutableCapabilities.setCapability("app", "bs://c700ce60cf13ae8ed97705a55b8e022f13c5827c");
