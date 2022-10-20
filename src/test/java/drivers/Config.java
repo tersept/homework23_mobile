@@ -1,6 +1,8 @@
 package drivers;
 
-@Config.Sources({"classpath:config/remote.properties"})
+@org.aeonbits.owner.Config.Sources({
+        "classpath:drivers/config.properties"
+})
 public interface Config extends org.aeonbits.owner.Config {
     @Key("browserstack.user")
     String getBrowserstackUser();
@@ -8,8 +10,8 @@ public interface Config extends org.aeonbits.owner.Config {
     @Key("browserstack.key")
     String getBrowserstackKey();
 
-    @Key("app")
-    String getApp();
+    @Key("appUrl")
+    String getAppUrl();
 
     @Key("device")
     String getDevice();
@@ -28,5 +30,7 @@ public interface Config extends org.aeonbits.owner.Config {
 
     @Key("remoteUrl")
     String getRemoteUrl();
+    @Key("baseUrl")
+    String getBaseUrl();
 
 }
