@@ -6,6 +6,8 @@ public interface Config extends org.aeonbits.owner.Config {
 
     @Key("browserstack.key")
     String getBrowserstackKey();
+    @Key("app")
+    String getApp();
 
     @Key("remoteUrl")
     String getRemoteUrl();
