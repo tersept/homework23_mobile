@@ -13,7 +13,7 @@ public class Browserstack {
         return given()
                 .filter(new AllureRestAssured())
                 .log().all()
-                .auth().basic("qaguru_B5xciN", "TzFxj7ss7siMKTxUURLy")
+                .auth().basic("bsuser_1hMNrP", "LPxoq8J2r1pv4EBppgyz")
                 .when()
                 .get(url)
                 .then()

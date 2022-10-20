@@ -4,6 +4,7 @@ import io.appium.java_client.AppiumBy;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.CollectionCondition.sizeGreaterThan;
+import static com.codeborne.selenide.CollectionCondition.texts;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 import static io.qameta.allure.Allure.step;
@@ -22,4 +23,13 @@ public class AndroidSearchTests extends TestBase {
                         .shouldHave(sizeGreaterThan(0)));
     }
 
+    @Test
+    void headerMenuTest() {
+        step("Click on header menu", () -> {
+            $(AppiumBy.id("org.wikipedia.alpha:id/view_list_card_header_menu")).click();
+        });
+        step("Verify menu", () ->
+                $$(AppiumBy.id("org.wikipedia.alpha:id/title"))
+                        .shouldHave(texts("Hide this card")));
+    }
 }
