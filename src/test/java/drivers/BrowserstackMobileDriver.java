@@ -14,6 +14,7 @@ import java.net.URL;
 public class BrowserstackMobileDriver implements WebDriverProvider {
 
     public static Config browserstack = ConfigFactory.create(Config.class, System.getProperties());
+
     public static URL getBrowserstackUrl() {
         try {
             return new URL("http://hub.browserstack.com/wd/hub");
@@ -30,11 +31,11 @@ public class BrowserstackMobileDriver implements WebDriverProvider {
         mutableCapabilities.setCapability("browserstack.user", browserstack.getBrowserstackUser());
         mutableCapabilities.setCapability("browserstack.key", browserstack.getBrowserstackKey());
         mutableCapabilities.setCapability("app", browserstack.getApp());
-        mutableCapabilities.setCapability("device", "Google Pixel 3");
-        mutableCapabilities.setCapability("os_version", "9.0");
-        mutableCapabilities.setCapability("project", "First Java Project");
-        mutableCapabilities.setCapability("build", "browserstack-build-1");
-        mutableCapabilities.setCapability("name", "first_test");
+        mutableCapabilities.setCapability("device", browserstack.getDevice());
+        mutableCapabilities.setCapability("os_version", browserstack.getOsVersion();
+        mutableCapabilities.setCapability("project", browserstack.getProject());
+        mutableCapabilities.setCapability("build", browserstack.getBuild());
+        mutableCapabilities.setCapability("name", browserstack.getName());
 
         return new RemoteWebDriver(getBrowserstackUrl(), mutableCapabilities);
     }
