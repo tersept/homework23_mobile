@@ -1,7 +1,7 @@
 package drivers;
 
 @org.aeonbits.owner.Config.Sources({
-        "classpath:drivers/config.properties"
+        "classpath:remote.properties"
 })
 public interface Config extends org.aeonbits.owner.Config {
     @Key("browserstack.user")
