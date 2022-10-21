@@ -22,9 +22,13 @@ public class AndroidSearchTests extends TestBase {
                 $$(AppiumBy.id("org.wikipedia.alpha:id/page_list_item_title"))
                         .shouldHave(sizeGreaterThan(0)));
     }
+    //Resource-Id	org.wikipedia.alpha:id/search_close_btn
 
     @Test
     void headerMenuTest() {
+//        step("Return home", () -> {
+//            $(AppiumBy.id("org.wikipedia.alpha:id/search_close_btn")).click();
+//        });
         step("Click on header menu", () -> {
             $(AppiumBy.id("org.wikipedia.alpha:id/view_list_card_header_menu")).click();
         });
